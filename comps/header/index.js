@@ -1,4 +1,4 @@
-import React, {useState, useContext, useCallback} from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import List from "@material-ui/core/List"
 import { ListItem, ListItemText, ListItemIcon, Drawer } from '@material-ui/core';
@@ -6,77 +6,42 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Button from '@material-ui/core/Button';
 import Popover from '@material-ui/core/Popover'
-import {MyContext} from '../../context';
-import Switch from '@material-ui/core/Switch';
-
+import MoodIcon from '@material-ui/icons/Mood';
+import KeyboardArrowDownRoundedIcon from '@material-ui/icons/KeyboardArrowDownRounded';
+import { useRouter } from 'next/router'
 
 const SiteHeader = styled.header`
-    background: ${props=>props.styletheme ? "#FFFFFF" : "#121212"};
-    border-bottom:  ${props=>props.styletheme ? "1px solid #eeeeee" : "1px solid #000000"};
+    margin-bottom: 10em;
 `;
 
 const HeaderContainer = styled.div`
     width: 100%;
-    padding: 0px 16px;
-    max-width: 1100px;
-    color: ${props=>props.styletheme ? "#546e7a" : "#FFFFFF"};
+    padding: 12px 16px;
+    max-width: 1300px;
+    color: #FFF;
     margin: 0 auto;
     display: flex;
-
-    
     
     align-items: center;
     @media (min-width: 600px) {
         min-height: 64px;
-
     }
-
-    @media (max-width: 733px) {
-        .header-seperator {
-            display: none;
-        }
-
-        width: 95%;
-
-        .buttonMobile {
-            font-size: 12px;
-            display: none;
-        }
-
-        .header-logo {
-            flex-grow: 3;
-        }
-
-        .header-item {
-            span {
-                text-align: right;
-            }
-            
-        }
-    }
-
-    @media(max-width: 599px) {
-        min-height: 80px;
-    } 
 
     .header-logo {
         flex-grow: 1;
     }
 
     .header-seperator {
-        flex-grow: 5;
+        flex-grow: 1;
     }
 
     .header-list {
         display: flex;
-        justify-content: space-between;
         align-items: center;
-        flex: 1;
-        padding: 0px 15px;
+        padding: 0px 12px;
     }
 
     .header-item {
-        padding: 0px 8px;
         width: 100%;
 
         
@@ -85,75 +50,77 @@ const HeaderContainer = styled.div`
     .header-box {
         border-radius: 8px;
         &:hover {
-            color: #1957bd;
+            color: #627597;
+            transition: 0.3s color ease;
         }
     }
 
 `;
 
-const Logo = styled.img`
+const Img = styled.img`
     width: auto;
-    max-width: 35px;
+    max-width: 56px;
+`;
+
+const DiscordLogo = styled.img`
+    width: auto;
+    max-width: 24px;
+`;
+
+const Tech = styled.a`
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5em;
+    cursor: pointer;
+    transition: 0.2s all ease;
+
+    &:hover {
+        opacity: 0.7;
+        transition: 0.2s all ease;
+    }
 `;
 
 const Header = () => {
-    const context = useContext(MyContext)
-
     const [open, setOpen] = useState(false);
     const handleClick = () => {
         setOpen(!open);
       };
-
-    const handleChange = (event) => {
-        context.setLightmode(!context.lightmode)
-    };
-
+      const router = useRouter()
     return (
-        <SiteHeader styletheme={context.lightmode}>
+        <SiteHeader>
 
-            <HeaderContainer styletheme={context.lightmode}>
-                {context.lightmode
-                ?
+            <HeaderContainer>
                 <div className="header-logo">
-                <Logo src={"./logo-sian-dark.svg"}></Logo>
+                    <Tech onClick={()=> {
+                        router.push("/")
+                    }}>SIAN.TECH</Tech>
                 </div>
-                :
-
-                <div className="header-logo">
-                <Logo src={"./logo-sian.svg"}></Logo>
-                </div>
-
-                }
-               
                 <div className="header-seperator"></div>
                     <List className={"header-list"}>
                         <ListItem className={"header-box"} button>
-                            <ListItemText primary={"Home"}  className={"header-item"}></ListItemText>
+                            <ListItemText primary={"Portfolio"} onClick={()=> {
+                                router.push("/portfolio")
+                            }} className={"header-item"}></ListItemText>
                         </ListItem>
                         {/* <ListItem className={"header-box"} button>
-                            <ListItemText primary={"About us"}>
-                                <ListItemIcon />
+                            <ListItemText primary={"About"}>
+                                
                             </ListItemText>
+
                         </ListItem>
                         <ListItem className={"header-box"} button>
-                            <ListItemText primary={"Contact"}>
-                                <ListItemIcon />
-                            </ListItemText>
-                        </ListItem>
-                        <ListItem  className={"header-box pricing"} button>
-                            <ListItemText primary={"Pricing"}>
+                            <ListItemText primary={"Minnie"}>
                                 <ListItemIcon />
                             </ListItemText>
                         </ListItem> */}
+                        
 
-                    
+                        
+                        
                     </List>
-                    <Switch
-                    checked={context.lightmode}
-                    onChange={handleChange}
-                    name="checkedA"
-                    inputProps={{ 'aria-label': 'secondary checkbox' }}
-                    />
+                {/* <Button startIcon={<MoodIcon />} size={"large"} variant="outlined" color="secondary">
+                LOGIN
+                </Button> */}
             </HeaderContainer>
 
         

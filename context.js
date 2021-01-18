@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 export const MyContext = React.createContext();
 
 const MyProvider = ({ children }) => {
-    const [lightmode, setLightmode] = useState(false)
+    const [siteTheme, setSiteTheme] = useState(false)
     return (
         <MyContext.Provider value={{
-            lightmode,
-            setLightmode
+            siteTheme,
+            setSiteTheme
         }}>
             {children}
         </MyContext.Provider>

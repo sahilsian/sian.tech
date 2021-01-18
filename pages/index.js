@@ -1,50 +1,25 @@
-import React, {useState, useContext} from 'react'
 import Head from 'next/head'
-import Hero from '../comps/hero'
-import Header from '../comps/header'
-import styled from 'styled-components'
-import Banner from '../comps/Banner'
-import Content from '../comps/content'
-import ImageContent from '../comps/ImageContent'
-import {MyContext} from '../context'
+import Landing from "../comps/landing"
+import HomeContent from '../comps/homecontent'
 
-
-const RootContainer = styled.div`
-`;
-
-const SiteContainer = styled.main`
-  background-color: ${props=>props.styletheme ? "#FFFFFF" : "#161616"};
-  box-sizing: border-box;
-  transition: all 0.2s ease-in;
-
-  
-`;
 export default function Home() {
-  const context = useContext(MyContext)
   return (
+    <div>
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" /> 
+      </Head>
 
-     <RootContainer>
-       <Head>
-       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-       </Head>
-        <Header></Header>
-        <SiteContainer styletheme={context.lightmode}>
-          <Hero>
-          </Hero>
-          <Banner 
-          text={"Send me a text or call and we can start right away!"}
-          >  
-          </Banner>
-          {/* <Content></Content>
-          <ImageContent img={"/kickboxing.jpg"}></ImageContent>
-          <ImageContent img={"/kickboxing.jpg"} Left={true}></ImageContent>
-          <ImageContent img={"/kickboxing.jpg"}></ImageContent>
-          <Banner 
-          text={"What are you Waiting For? Start working with Us Today!"}
-          >
-          </Banner> */}
-        </SiteContainer>
-     </RootContainer>
+      <main>
+        <Landing></Landing>
+        <HomeContent></HomeContent>
+      </main>
 
+      {/* <footer className={styles.footer}>
+        
+      </footer> */}
+    </div>
   )
 }
