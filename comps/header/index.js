@@ -12,6 +12,9 @@ import { useRouter } from 'next/router'
 
 const SiteHeader = styled.header`
     margin-bottom: 10em;
+    @media screen and (max-width: 787px) {
+        margin-bottom: 3em;
+    }
 `;
 
 const HeaderContainer = styled.div`

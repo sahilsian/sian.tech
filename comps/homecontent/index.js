@@ -15,7 +15,9 @@ const Margin = styled.div`
     width: 100%;
     max-width: 1200px;
     margin: 0px auto;
-    padding: 70px 0px;
+    padding: 70px 15px;
+
+    
 `;
 
 const ExtendedMargin = styled.div`
@@ -35,6 +37,9 @@ const ComingSoonBox = styled.div`
     padding: 30px 70px;
     display: flex;
     background-color: #fff;
+
+    
+    
 `;
 
 const Heading = styled.p`
@@ -56,12 +61,19 @@ const SubHeading = styled.p`
 const FlexText = styled.div`
     flex: 1;
     padding: 0px 10px;
+    @media screen and (max-width: 787px) {
+        text-align: center;
+    }
+    
 `;
 
 const FlexImage = styled.div`
     flex: 1;
     padding: 0px 10px;
     display: flex;
+    @media screen and (max-width: 787px) {
+        display: none;
+    }
 `;
 
 const P = styled.p`
@@ -74,6 +86,10 @@ const Avatar = styled.img`
     height: 150px;
     box-shadow: 1px 1px 5px #eeeeee;
     position: relative;
+
+    @media screen and (max-width: 787px) {
+        display: none;
+    }
 `;
 
 const InterestWrap = styled.div`
@@ -82,6 +98,10 @@ const InterestWrap = styled.div`
     display: flex;
     align-items: flex-end;
     padding: 0px 20px;
+
+    @media screen and (max-width: 787px) {
+        display: none;
+    }
 `;
 
 const Interest = styled.p`
@@ -102,11 +122,17 @@ const Details = styled.div`
     padding: 50px 10px;
     display: flex;
     flex-direction: row-reverse;
+    @media screen and (max-width: 787px) {
+        text-align: center;
+    }
 `;
 
 const DetailsImg = styled.div`
     flex: 1;
     margin: 0px 10px;
+    @media screen and (max-width: 787px) {
+        display: none;
+    }
 `;
 
 const UserList = styled.div`
@@ -120,6 +146,10 @@ const RoboDude = styled.img`
     max-width: 200px;
     margin: auto;
     display: block;
+
+    @media screen and (max-width: 787px) {
+        display: none;
+    }
 `;
 
 const Wrap = styled.div`

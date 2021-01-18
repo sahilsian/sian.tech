@@ -89,6 +89,9 @@ const ElephantPhone = styled.img`
     width: auto;
     max-width: ${props=>props.width ? "250px" : "300px"};
     border-radius: 20px;
+    @media screen and (max-width: 787px) {
+        display: none;
+    }
 `;
 
 const ElephantOpen = styled.div`
@@ -115,6 +118,7 @@ const ElephantPhoneOpen = styled.img`
     max-width: 370px;
     margin: auto;
     margin-bottom: 2em;
+    
 `;
 
 const ElephantTitleOpen = styled.p`
@@ -135,7 +139,7 @@ const ElephantSubTitleOpen = styled.p`
 
 const MyRole = styled.div`
     width: 100%;
-    padding: 100px 0px;
+    padding: 100px 15px;
 `;
 
 const MyRoleTitle = styled.p`
@@ -156,6 +160,9 @@ const Screenshot = styled.img`
     max-width: ${props=>props.width ? "300px" : "400px"};
     margin: 0px 40px;
     border-radius: 20px;
+    @media screen and (max-width: 787px) {
+        display: none;
+    }
 `;
 
 const Link = styled.a`
