@@ -47,8 +47,7 @@ const Footer = ({}) => {
             <ContainerMargin>
                 
                 <Title style={{fontWeight: "bold"}}>Sahil Sian</Title>
-                <Title>sahilsianart@gmail.com</Title>
-                <Title>778-952-6800</Title>
+                <Title>sahil@sian.tech</Title>
                 
             </ContainerMargin>
             
