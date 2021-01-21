@@ -400,7 +400,7 @@ const HomeContent = ({}) => {
                         <Heading>Shoot me a Message on</Heading>
                         <SubHeading>LinkedIn.com</SubHeading> <ShareRoundedIcon style={{fontSize: '18px'}}></ShareRoundedIcon>
                         <P>I'm always looking to build connections whether you're another developer looking to collaborate or you're just seeking my skills!</P>
-                        <Button variant="outlined" color={"primary"}>See my LinkedIn Profile</Button>
+                        <Button href={"https://www.linkedin.com/in/sahil-sian-5305b7198/"} variant="outlined" color={"primary"}>See my LinkedIn Profile</Button>
                    </FlexText>
 
                     <FlexImage>
